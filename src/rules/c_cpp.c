@@ -14,6 +14,12 @@ int _c_cpp_seccomp_rules(struct config *_config, bool allow_write_file) {
                                 SCMP_SYS(munmap), SCMP_SYS(uname),
                                 SCMP_SYS(arch_prctl), SCMP_SYS(brk),
                                 SCMP_SYS(access), SCMP_SYS(exit_group),
+                               // arm64
+                               SCMP_SYS(faccessat), SCMP_SYS(newfstatat),
+                               SCMP_SYS(set_tid_address), SCMP_SYS(set_robust_list),
+                               SCMP_SYS(rseq), SCMP_SYS(prlimit64),
+                               SCMP_SYS(getrandom), SCMP_SYS(fadvise64),
+                               // end
                                 SCMP_SYS(close), SCMP_SYS(readlink),
                                 SCMP_SYS(sysinfo), SCMP_SYS(write),
                                 SCMP_SYS(writev), SCMP_SYS(lseek),
